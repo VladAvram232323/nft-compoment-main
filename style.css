@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap");
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue: hsl(217, 54%, 11%);
+    --very-dark-blue-card: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+
+    --margin-btm: 1.8rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    min-height: 100vh;
+    background-color: var(--very-dark-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 350px;
+    background-color: var(--very-dark-blue-card);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+}
+
+.image-container {
+    position: relative;
+    margin-bottom: var(--margin-btm);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.image:hover {
+    opacity: 50%;
+}
+
+.overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: var(--cyan);
+    border-radius: 1rem;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.view {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.image-container:hover .overlay {
+    transition: opacity 0.3s ease;
+    opacity: 0.5;
+}
+
+.image-container:hover .view {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.card_title {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: var(--margin-btm);
+}
+
+.card_description {
+    font-weight: 300;
+    color: var(--soft-blue);
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin-bottom: var(--margin-btm);
+}
+
+.card_price_time {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--margin-btm);
+    border-bottom: 1px solid var(--very-dark-blue-line);
+    padding-bottom: var(--margin-btm);
+}
+
+.card_price {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    color: var(--cyan);
+    font-size: 1.8rem;
+}
+
+.card_time {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    color: var(--soft-blue);
+    font-size: 1.8rem;
+}
+
+.card_footer {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    margin-top: var(--margin-btm);
+}
+
+.avatar {
+    height: 3.6rem;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+}
+
+.creator {
+    font-size: 1.8rem;
+    color: var(--soft-blue);
+    font-weight: 300;
+}
+
+.creator span {
+    color: var(--white);
+    font-weight: 400;
+}
+
+.creator span:hover,
+.creator span:active {
+    transition: all 0.3s ease;
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+@media (max-width: 400px) {
+    .container {
+        max-width: 90%;
+        margin-top: 2rem;
+    }
+}
