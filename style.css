@@ -47,6 +47,7 @@ body {
 }
 
 .image {
+    display: block;
     width: 100%;
     height: auto;
     border-radius: 1rem;
